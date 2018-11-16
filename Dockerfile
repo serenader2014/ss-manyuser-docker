@@ -15,4 +15,6 @@ WORKDIR /shadowsocks
 
 RUN git clone -b manyuser https://github.com/esdeathlove/shadowsocks.git && cd shadowsocks && pip install -r requirements.txt && cp config.json user-config.json
 
+ADD ./userapiconfig.py /shadowsocks/shadowsocks/userapiconfig.py
+
 CMD ["python", "/shadowsocks/shadowsocks/server.py"]
